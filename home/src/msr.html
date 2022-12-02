@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marksheet Results</title>
+
+    <!-- ? Insert an Linked for TailwindCSS ? -->
+    <link rel="stylesheet" href="/dist/output.css" />
+  </head>
+  <body>
+    <div
+      class="mkr-body w-full min-h-screen flex flex-col justify-center items-center bg-slate-100 p-4 text-slate-900">
+      <div
+        class="mkr-container w-full h-full min-h-[95vh] bg-slate-900 text-slate-200 rounded-xl p-2 flex flex-col items-center justify-center">
+        <!-- Forms -->
+        <div
+          class="mkr-container-form title-mk flex flex-col w-auto h-full ring-4 ring-green-500 rounded-sm bg-slate-900 text-slate-300">
+          <div
+            class="logo-mkr w-full h-full flex flex-row justify-between items-center gap-5 bg-green-500 px-4 py-3">
+            <img
+              src="../photos/spi.jpeg"
+              class="w-14 h-14 rounded-full ring-4 ring-offset-2 ring-green-500" />
+            <h2
+              class="text-slate-140 text-3xl font-pacifico tracking-wide text-center p-2">
+              Sherpur Polytechnic Institute
+            </h2>
+            <img
+              src="../photos/photo-6.jpg"
+              class="w-14 h-14 rounded-full ring-4 ring-offset-2 ring-green-500" />
+          </div>
+          <hr class="w-full mb-3 h-1 bg-slate-300 rounded-xl" />
+          <form
+            action=""
+            class="flex flex-col text-slate-200 p-4 mx-3 w-full h-full items-center justify-center">
+            <div
+              class="submt-btn-mkr px-5 mr-6 py-2 w-full h-auto flex items-center justify-center">
+              <p
+                class="mkr-alert px-2 py-[1.5px] bg-slate-300 text-red-500 text-center rounded-md w-full duration-300 hover:tracking-wider font-bold">
+                Please Fill all fields and then find your
+                <span class="font-bold tracking-wider text-green-500"
+                  >Result</span
+                >.
+              </p>
+            </div>
+            <span class="text-0">@csrf</span>
+            <div
+              class="input-label-section-marksheet-result flex flex-col gap-4 w-full h-full items-center justify-center">
+              <div class="mkr-input-section flex flex-col mr-[25px]">
+                <div
+                  class="mkr-input-group flex flex-row gap-5 w-full h-full my-2">
+                  <label for="institute_name">Select Your Institute :</label>
+                  <select name="institute_name" id="institute_name">
+                    <option selected hidden class="opt-red-txt">
+                      Select Your Institute Name
+                    </option>
+                    <option value="Sherpur Polytechnic Institute">
+                      Sherpur Polytechnic Institute
+                    </option>
+                  </select>
+                </div>
+                <div
+                  class="mkr-input-group flex flex-row gap-5 w-full h-full my-2">
+                  <label for="tname">Select Your Technology :</label>
+                  <select name="tname" id="tname">
+                    <option selected hidden class="opt-red-txt">
+                      Select Deperment
+                    </option>
+                    <option value="1102|Cvil Engineering Thechnoloy">
+                      Cvil Engineering Technology
+                    </option>
+                    <option value="1202|Electrical Engineering Thechnoloy">
+                      Electrical Engineering Technology
+                    </option>
+                    <option value="1203|Electronics Engineering Thechnoloy">
+                      Electronics Engineering Technology
+                    </option>
+                    <option value="1502|Mechanical Engineering Thechnoloy">
+                      Mechanical Engineering Technology
+                    </option>
+                    <option value="1201|Computer Engineering Thechnoloy">
+                      Computer Engineering Technology
+                    </option>
+                    <option value="1662|Automobile Engineering Thechnoloy">
+                      Automobile Engineering Technology
+                    </option>
+                    <option value="1103|Environmental Engineering Thechnoloy">
+                      Environmental Engineering Technology
+                    </option>
+                    <option value="1671|Power Engineering Thechnoloy">
+                      Power Engineering Technology
+                    </option>
+                    <option value="1011|Food Engineering Thechnoloy">
+                      Food Engineering Technology
+                    </option>
+                    <option value="1104|Construction Engineering Thechnoloy">
+                      Construction Technology
+                    </option>
+                    <option
+                      value="1603|Textyle Sceince and Engineering Thechnoloy">
+                      Textyle Sceince and Engineering Technology
+                    </option>
+                    <option value="1237|Mecatronics Engineering Thechnoloy">
+                      Mecatronics Technology
+                    </option>
+                    <option value="1101|Architectural Engineering Thechnoloy">
+                      Architectural Technology
+                    </option>
+                    <option
+                      value="1208|Telicommunication Engineering Thechnoloy">
+                      Telicommunication Engineering Technology
+                    </option>
+                    <option
+                      value="1299|Electrical and Electronics Engineering Thechnoloy">
+                      Electrical and Electronics Technology
+                    </option>
+                    <option
+                      value="1501|Engineering Machines Engineering Thechnoloy">
+                      Engineering Machines Technology
+                    </option>
+                  </select>
+                </div>
+                <div
+                  class="mkr-input-group flex flex-row gap-5 w-full h-full my-2">
+                  <label for="sem_name">Select Semester :</label>
+                  <select name="sem_name" id="sem_name">
+                    <option selected hidden class="opt-red-txt">
+                      Select A Semester
+                    </option>
+                    <option value="first_semester">First Semester</option>
+                    <option value="second_semester">Second Semester</option>
+                    <option value="third_semester">Third Semester</option>
+                    <option value="fourth_semester">Fourth Semester</option>
+                    <option value="fifth_semester">Fifth Semester</option>
+                    <option value="sixth_semester">Sixth Semester</option>
+                    <option value="seventh_semester">Seventh Semester</option>
+                    <option value="eight_semester">Eight Semester</option>
+                  </select>
+                </div>
+                <div
+                  class="mkr-input-group flex flex-row gap-5 w-full h-full my-2">
+                  <label for="shift_name">Select Your Shift :</label>
+                  <select name="shift_name" id="shift_name">
+                    <option selected hidden class="opt-red-txt">
+                      Select A Shift
+                    </option>
+                    <option value="first_shift">First shift</option>
+                    <option value="second_shift">Second Shift</option>
+                  </select>
+                </div>
+                <div
+                  class="mkr-input-group flex flex-row gap-5 w-full h-full my-2">
+                  <label for="exam_year">Select Eaxmination year :</label>
+                  <input
+                    type="number"
+                    min="2000"
+                    max="2050"
+                    name="exam_year"
+                    placeholder="@-Example : 2022"
+                    id="exam_year" />
+                </div>
+                <div
+                  class="mkr-input-group flex flex-row gap-5 w-full h-full my-2">
+                  <label for="roll_um">Roll Number :</label>
+                  <input
+                    type="number"
+                    name="roll_um"
+                    placeholder="@-Example : 72564...."
+                    id="roll_um" />
+                </div>
+                <div
+                  class="mkr-input-group flex flex-row gap-5 w-full h-full my-2">
+                  <label for="reg_num">Registration Number :</label>
+                  <input
+                    type="number"
+                    name="reg_num"
+                    placeholder="@-Example : 64257...."
+                    id="reg_num" />
+                </div>
+                <div
+                  class="mkr-input-group flex flex-row gap-5 w-full h-full my-2">
+                  <label for="reg_num" class="flex flex-row gap-4">
+                    Math :
+                    <p class="flex flex-row gap-1 text-yellow-400">
+                      <span id="firdt_num">15</span>
+                      <span id="perameters">+</span>
+                      <span id="second_num">19</span>
+                    </p>
+                  </label>
+                  <input
+                    type="number"
+                    name="fill_test"
+                    placeholder="Write The Correct Answer!"
+                    id="fill_test" />
+                </div>
+              </div>
+            </div>
+            <div
+              class="submt-btn-mkr mb-2 px-5 mr-8 py-2 w-full h-auto flex items-center justify-center">
+              <input
+                type="submit"
+                value="Find Resdult"
+                class="mkr-alert px-2 py-[1.5px] bg-slate-300 text-[#0086c9] rounded-md w-full duration-300 hover:tracking-wider font-bold" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

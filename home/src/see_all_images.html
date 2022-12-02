@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+<link href="/dist/output.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Enjoy Here -->
+
+  <body class="w-full h-full">
+    <div class="bg-slate-900 w-full p-4 h-auto">
+      <div class="resp-box bg-slate-900 w-full h-auto grid grid-cols-2fr1fr gap-3">
+        <!-- Carousel Container -->
+        <div id="img-box" class="img-box w-full h-full mx-3 my-4 relative">
+          <i onclick="prev()"
+            class="prev-btn bg-slate-900 p-2 ring-4 ring-green-500 rounded-full duration-300 hover:text-slate-900 hover:bg-white   text-white text-4xl font-bold absolute top-[37.5%] left-4 bx bxs-left-arrow-circle"></i>
+          <img src="../photos/photo-1.jpg" class="w-full h-[120vh] rounded-xl ring-2 hidden ring-green-400">
+          <img src="../photos/photo-2.jpg" class="w-full h-[120vh] rounded-xl ring-2 hidden ring-green-400">
+          <img src="../photos/photo-3.jpg" class="w-full h-[120vh] rounded-xl ring-2 hidden ring-green-400">
+          <img src="../photos/photo-4.jpg" class="w-full h-[120vh] rounded-xl ring-2 hidden ring-green-400">
+          <img src="../photos/photo-5.jpg" class="w-full h-[120vh] rounded-xl ring-2 hidden ring-green-400">
+          <img src="../photos/photo-6.jpg" class="w-full h-[120vh] rounded-xl ring-2 hidden ring-green-400">
+          <i onclick="next()"
+            class="prev-btn bg-slate-900 p-2 ring-4 ring-green-500 rounded-full duration-300 hover:text-slate-900 hover:bg-white   text-white text-4xl font-bold absolute top-[37.5%] right-4 bx bxs-right-arrow-circle"></i>
+        </div>
+        <a href="#" class="go-allpic w-full h-full">
+          <div
+            class="flex flex-col items-center justify-center mx-3 w-95p h-[120vh] rounded-xl my-4 border-2 border-green-500">
+            <i onclick="downloadAll()"
+              class="bx bxs-download text-9xl text-slate-100 hover:text-blue-500 duration-300 mb-3"></i>
+            </i>
+            <p onclick="downloadAll()" class="download-text ml-30px text-slate-100 font-bold hover:tracking-wider hover:text-blue-500 text-3xl
+              duration-300">
+              DOWNLOAD ALL PICTURE
+            </p>
+          </div>
+        </a>
+      </div>
+      <div
+        class="third-sec my-3 w-full h-12 px-3 py-1 border-t-2 border-b-2 border-emerald-500 grid grid-cols-3 items-center">
+        <a href="#"
+          class="like-sec flex items-center justify-center w-full h-11 pb-2 font-semibold tracking-wider hover:tracking-wider1 duration-300 text-lg hover:text-green-500 gap-3 text-white">
+          <i class="bx bxs-like p-1 rounded-full ring-2"></i>Like
+        </a>
+        <a href="#"
+          class="cmnt-sec flex items-center justify-center w-full h-11 pb-2 font-semibold tracking-wider hover:tracking-wider1 duration-300 text-lg hover:text-green-500 gap-3 text-white">
+          <i class="bx bxs-comment-detail p-c1 rounded-full ring-2"></i>Comment
+        </a>
+        <a href="#"
+          class="share-sec flex items-center justify-center w-full h-11 pb-2 font-semibold tracking-wider hover:tracking-wider1 duration-300 text-lg hover:text-green-500 gap-3 text-white">
+          <i class="bx bxs-share p-1 rounded-full ring-2"></i>Share
+        </a>
+      </div>
+      <div class="cmnt-sec max-h-full min-h-16 ring-2 rounded-xl ring-green-500 p-3 mt-9 mb-2">
+        <div class="ring-4 ring-slate-400 rounded-xl p-3 w-full h-auto flex gap-3">
+          <textarea name=""
+            class="textarea bg-transparent outline-none text-white resize-none outline-noneoverflow-y-scroll overflow-x-hidden rounded-xl max-h-[150px] min-h-12 text-lg  max-w-3/4 w-full "
+            readonly>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam blanditiis qui voluptate iste a. Ipsa repellendus hic beatae corrupti minus voluptas consequuntur cumque molestias? Consequatur numquam doloribus soluta quae! Illo!</textarea>
+          <!-- This Textarea Width and Images Width are Same ! -->
+          <img src="../photos/photo-1.jpg" class="mt-3 mb-2 w-3/12 h-64 ring-4 ring-green-400 rounded-xl hidden">
+        </div>
+
+        <div class="cmnt-box w-full h-auto mt-5">
+          <form action="" class="ring-4 ring-slate-400 rounded-xl p-2 w-full h-auto">
+            <textarea name=""
+              class="bg-transparent text-lg text-white resize-none outline-none w-full overflow-y-scroll overflow-x-hidden rounded-xl h-20 "> </textarea>
+            <div class="df-col w-full flex items-center justify-between pr-2">
+              <div class="res-form-inp flex w-2/3 h-auto items-center gap-3 mt-2">
+                <label for="Image" class="text-white font-semibold text-xl pl-2">Upload a Image :</label>
+                <input type="file" name="" id="" class="w-2/3 p-2 ml-2 mt-2">
+              </div>
+              <button type="submit"
+                class=" text-lg px-3 py-1 text-center text-slate-900 ring-slate-400 ring-4 rounded-xl bg-green-500  hover:tracking-wider  font-semibold duration-300 hover:text-slate-50 mt-5 mb-2">Pick
+                a Comment</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Vannila JS Carousel -->
+    <!-- Images Download System -->
+    <script src="./FileSaver.js"></script>
+    <script>
+      const images = document.querySelectorAll("#img-box img")
+
+      function downloadAll() {
+        for (var i = 0; i < images.length; i++) {
+          console.log(images[i])
+          saveImg(images[i])
+        }
+
+        function saveImg(image) {
+          const imgPath = image.getAttribute("src")
+          const fname = getFileName(imgPath)
+          saveAs(imgPath, fname)
+
+          function getFileName(str) {
+            return str.substring(str.lastIndexOf("/") + 1)
+          }
+        }
+      }
+
+      // var images = document.querySelectorAll('.slider-images'),
+      i = 0;
+      let imgAray = [];
+      for (var j = 0; j < images.length; j++) {
+        imgAray.push(images[j].getAttribute("src"))
+        // images[j].classList.add('d-none')
+      }
+      images[0].style.display = 'block'
+
+      function prev() {
+        if (i <= 0) i = imgAray.length;
+        i--;
+        return setImg();
+      }
+
+      function next() {
+        if (i >= imgAray.length - 1) i = -1;
+        i++;
+        return setImg();
+      }
+
+      function setImg() {
+        return images[0].setAttribute('src', imgAray[i]);
+
+      }
+    </script>
+  </body>
+</body>
+
+</html>
