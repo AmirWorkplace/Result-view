@@ -735,8 +735,7 @@ body {
   }
 
   .mkr-container-form {
-    overflow-y: scroll;
-    overflow-x: hidden;
+    overflow: hidden;
   }
 
   .mkr-input-group {
