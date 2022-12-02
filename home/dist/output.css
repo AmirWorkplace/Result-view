@@ -1253,6 +1253,11 @@ video {
   color: rgb(0 134 201 / var(--tw-text-opacity));
 }
 
+.text-\[\#dc143c\] {
+  --tw-text-opacity: 1;
+  color: rgb(220 20 60 / var(--tw-text-opacity));
+}
+
 .text-slate-800 {
   --tw-text-opacity: 1;
   color: rgb(30 41 59 / var(--tw-text-opacity));
@@ -2224,6 +2229,24 @@ body {
     font-size: 1.3rem !important;
     line-height: 1 !important;
   }
+}
+
+.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dflex {
+  display: flex !important;
+}
+
+.dhide {
+  display: none !important;
 }
 
 .hover\:bg-green-500:hover {
