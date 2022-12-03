@@ -1,148 +1,334 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marksheet Results</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="/dist/output.css" rel="stylesheet" />
-</head>
-
-<body>
-  <div class="min-h-full w-full bg-slate-100 p-3">
-    <div class="w-full min-h-[95vh] flex flex-col justify-center items-center bg-slate-900 p-3 rounded-xl px-3">
+    <!-- ? Insert an Linked for TailwindCSS ? -->
+    <link rel="stylesheet" href="/dist/output.css" />
+  </head>
+  <body class="overflow">
+    <div class="w-full sr__main__body h-full active relative">
       <div
-        class="addpost-heading w-auto h-auto p-2 flex justify-center my-5 fitems-center bg-slate-300 ring-4 ring-gray-500 rounded-xl">
-        <h1 class="mt-2 font-rubik-marker text-slate-900 font-bold text-3xl ml-2">SPI</h1>
-        <span class="mb-2 mx-2 text-red-500 text-5xl font-bold"> - </span>
-        <h2 class="mt-2 font-syle-italiano text-slate-900 text-3xl mr-2">Sherpur Poltechnic Institute</h2>
+        class="flex duration-500 h-full min-h-screen items-center justify-center w-full bg-slate-100 overflow-x-hidden p-4">
+        <button
+          id="MSR_Result__view__btn"
+          class="px-3 py-1 bg-green-500 text-slate-300 duration-300 text-xl font-mono text-center hover:tracking-widest hover:text-slate-50 ring-4 ring-offset-2 ring-green-500 rounded-3xl">
+          Click to Show Me!
+        </button>
       </div>
-      <!-- Input Section -->
 
-      <form action="" class="w-full" enctype="multipart/form-data">
-        @csrf
-        <div class="inp-group w-full my-3 flex justify-center gap-3 px-8">
-          <label for="text" class="w-2/6 text-slate-200 text-lg font-semibold">Post Category:</label>
-          <input type="text" class="w-4/6 ring-2 ring-green-500  rounded-xl px-4 py-2 text-lg outline-none"
-            placeholder="@-Example : OFF Day Post" />
-        </div>
-        <div class="inp-group w-full my-3 flex justify-center gap-3 px-8">
-          <label for="Post Title" class="w-2/6 text-slate-200 text-lg font-semibold">Post Title:</label>
-          <input type="text" class="w-4/6 ring-2 ring-green-500  rounded-xl px-4 py-2 text-lg outline-none"
-            placeholder="@-Example : Awesome Turning" />
-        </div>
-        <div class="inp-group w-full my-3 flex justify-center gap-3 px-8">
-          <label for="text" class="w-2/6 text-slate-200 text-lg font-semibold">Post Description:</label>
-          <div class="post-textarea bg-slate-200 w-4/6 h-auto py-2 px-4 ring-2 ring-green-500  rounded-xl">
-            <textarea name="" class="w-full rounded-xl outline-none resize-none h-52 text-lg overflow-y-scroll" id=""
-              cols="30" rows="10"></textarea>
+      <div
+        id="MSR_Result__view"
+        class="MSR_Result__view flex duration-500 absolute top-0 left-0 min-h-screen items-center justify-center w-full bg-slate-100 overflow-x-hidden p-4">
+        <div
+          id="msv_body"
+          class="bg-slate-900 msv_body flex show-me-btn ring-4 ring-green-400 rounded-md text-slate-300 flex-col justify-center items-start w-full h-full text-md font-normal">
+          <button
+            id="MR__show__btn"
+            class="fixed opacity-5 hover:opacity-100 top-0 right-0 m-3 px-3 py-1 bg-red-500 text-slate-300 duration-300 text-xl font-mono text-center hover:tracking-widest hover:text-slate-50 ring-4 ring-offset-2 ring-green-500 rounded-3xl">
+            Click to Hide Me!
+          </button>
+          <button
+            id="print__result"
+            class="fixed opacity-5 hover:opacity-100 top-0 right-8 m-3 px-3 py-1 bg-red-500 text-slate-300 duration-300 text-xl font-mono text-center hover:tracking-widest hover:text-slate-50 ring-4 ring-offset-2 ring-green-500 rounded-3xl">
+            Print Me!
+          </button>
+          <div class="w-full h-full">
+            <div
+              class="logo-mkr w-full h-full flex flex-row justify-between items-center gap-5 bg-green-500 px-4 py-3">
+              <img
+                src="./photos/spi.jpeg"
+                class="w-14 h-14 rounded-full ring-4 ring-offset-2 ring-green-500" />
+              <h2
+                class="text-slate-140 text-3xl font-pacifico tracking-wide text-center p-2">
+                Sherpur Polytechnic Institute
+              </h2>
+              <img
+                src="./photos/photo-6.jpg"
+                class="w-14 h-14 rounded-full ring-4 ring-offset-2 ring-green-500" />
+            </div>
+            <div
+              class="title-part w-full h-full justify-center items-start flex flex-row p-4">
+              <div
+                class="msv-title w-[65%] h-full p-0 flex-col flex items-center justify-center mt-3">
+                <div
+                  class="msv-title-group items-center justify-center flex flex-row w-full h-auto gap-3">
+                  <label for="name">Student Name </label>
+                  <span> :</span>
+                  <!-- <input type="text" readonly value="Syed Amir Ali" /> -->
+                  <p>Syed Amir Ali</p>
+                </div>
+                <div
+                  class="msv-title-group items-center justify-center flex flex-row w-full h-auto gap-3">
+                  <label for="name">Technology </label>
+                  <span> :</span>
+                  <!-- <input
+                    type="text"
+                    readonly
+                    value="Electrical Enginnering - (1201)" /> -->
+                  <p>Electrical Enginnering - (1201)</p>
+                </div>
+                <div
+                  class="msv-title-group items-center justify-center flex flex-row w-full h-auto gap-3">
+                  <label for="name">Semeter</label>
+                  <span> :</span>
+                  <p>Fourth Semester</p>
+                  <!-- <input type="text" readonly value="Fourth Semester" /> -->
+                </div>
+                <div
+                  class="msv-title-group items-center justify-center flex flex-row w-full h-auto gap-3">
+                  <label for="name">Shift </label>
+                  <span> :</span>
+                  <p>Fist Shift</p>
+                  <!-- <input type="text" readonly value="Fist Shift" /> -->
+                </div>
+                <div
+                  class="msv-title-group items-center justify-center flex flex-row w-full h-auto gap-3">
+                  <label for="name">Roll Number </label>
+                  <span> :</span>
+                  <p>573344</p>
+                  <!-- <input type="text" readonly value="573344" /> -->
+                </div>
+                <div
+                  class="msv-title-group items-center justify-center flex flex-row w-full h-auto gap-3">
+                  <label for="name">Registartion </label>
+                  <span> :</span>
+                  <p>1502142334</p>
+                  <!-- <input type="text" readonly value="1502142334" /> -->
+                </div>
+                <div
+                  class="msv-title-group items-center justify-center flex flex-row w-full h-auto gap-3">
+                  <label for="name">Gender</label>
+                  <span> :</span>
+                  <p>Male</p>
+                  <!-- <input type="text" readonly value="Male" /> -->
+                </div>
+                <div
+                  class="msv-title-group items-center justify-center flex flex-row w-full h-auto gap-3">
+                  <label for="name">Father's Name</label>
+                  <span> :</span>
+                  <p>Mohammad Shamsul Haque</p>
+                  <!-- <input type="text" readonly value="Mohammad Shamsul Haque" /> -->
+                </div>
+                <div
+                  class="msv-title-group items-center justify-center flex flex-row w-full h-auto gap-3">
+                  <label for="name">Mother's Name</label>
+                  <span> :</span>
+                  <p>Mst. Aklila Akter Arzu</p>
+                  <!-- <input type="text" readonly value="Mst. Aklila Akter Arzu" /> -->
+                </div>
+                <div
+                  class="msv-title-group items-center justify-center flex flex-row w-full h-auto gap-3">
+                  <label for="name">Board</label>
+                  <span> :</span>
+                  <p>Dhaka</p>
+                  <!-- <input type="text" readonly value="Dhaka" /> -->
+                </div>
+                <div
+                  class="msv-title-group items-center justify-center flex flex-row w-full h-auto gap-3">
+                  <label for="name">Religion</label>
+                  <span> :</span>
+                  <p>Islam</p>
+                  <!-- <input type="text" readonly value="Islam" /> -->
+                </div>
+              </div>
+              <div
+                class="msv-title-id w-[35%] h-full items-center justify-center flex flex-col gap-4 p-4">
+                <picture
+                  class="w-48 h-48 ring-2 ring-offset-1 ring-green-500 rounded-xl">
+                  <img
+                    class="w-full h-full rounded-xl"
+                    src="./photos/photo-6.jpg" />
+                </picture>
+
+                <div
+                  class="cradit-table w-full h-full p-2 items-center justify-center mt-2">
+                  <table class="w-full h-auto">
+                    <thead>
+                      <tr class="w-full text-center">
+                        <th>Marks</th>
+                        <th>Cradit</th>
+                        <th>Grade</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="w-full text-center">
+                        <td>80 – 100</td>
+                        <td>5.00</td>
+                        <td>A+</td>
+                      </tr>
+                      <tr class="w-full text-center">
+                        <td>70 – 79</td>
+                        <td>4.00</td>
+                        <td>A</td>
+                      </tr>
+                      <tr class="w-full text-center">
+                        <td>60 – 69</td>
+                        <td>3.50</td>
+                        <td>A-</td>
+                      </tr>
+                      <tr class="w-full text-center">
+                        <td>50 – 59</td>
+                        <td>3.00</td>
+                        <td>B</td>
+                      </tr>
+                      <tr class="w-full text-center">
+                        <td>40 – 49</td>
+                        <td>2.00</td>
+                        <td>C</td>
+                      </tr>
+                      <tr class="w-full text-center">
+                        <td>33 – 39</td>
+                        <td>1.00</td>
+                        <td>D</td>
+                      </tr>
+                      <tr class="w-full text-center">
+                        <td>0 – 32</td>
+                        <td>0.00</td>
+                        <td>F</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="marksheet-table w-full h-full p-4 items-center justify-center flex flex-row">
+            <table class="w-full h-full">
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th><span>Subject</span> <span> Name</span></th>
+                  <th><span>Subject</span> <span> Code</span></th>
+                  <th><span>Earned </span> <span>point</span></th>
+                  <th><span>Earned </span> <span>Grade</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Bangla 1<sup>st</sup></td>
+                  <td>52441</td>
+                  <td>4.00</td>
+                  <td>A+</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Bangla 22<sup>nd</sup></td>
+                  <td>52441</td>
+                  <td>4.00</td>
+                  <td>A+</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>English 1<sup>st</sup></td>
+                  <td>52441</td>
+                  <td>4.00</td>
+                  <td>A+</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>English 2<sup>nd</sup></td>
+                  <td>52441</td>
+                  <td>4.00</td>
+                  <td>A+</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Bangladesh and Social Sceince</td>
+                  <td>52441</td>
+                  <td>4.00</td>
+                  <td>A+</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Physics</td>
+                  <td>52441</td>
+                  <td>4.00</td>
+                  <td>A+</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>Chamestry</td>
+                  <td>52441</td>
+                  <td>4.00</td>
+                  <td>A+</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>Biology</td>
+                  <td>52441</td>
+                  <td>4.00</td>
+                  <td>A+</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>Mathmatics</td>
+                  <td>52441</td>
+                  <td>4.00</td>
+                  <td>A+</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>Islam and Moral Education</td>
+                  <td>52441</td>
+                  <td>4.00</td>
+                  <td>A+</td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td>Higher Math</td>
+                  <td>52441</td>
+                  <td>4.00</td>
+                  <td>A+</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="w-72 h-full">
+              <thead>
+                <tr>
+                  <th><span>Excet</span> <span> CGPA</span></th>
+                  <th>CGPA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>3.80</td>
+                  <td>4.00</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
-        <div class="inp-group w-full my-3 flex justify-center gap-3 px-8">
-          <label for="text" class="w-2/6 text-slate-200 text-lg font-semibold">Post Time:</label>
-          <input type="text" class="w-4/6 ring-2 ring-green-500  rounded-xl px-4 py-2 text-lg outline-none"
-            placeholder="@-Example : Date 12/11/2022 | Time 05:31:49 !" />
-        </div>
-        <div class="inp-group w-full my-3 flex justify-center gap-3 px-8">
-          <div class="img-box-card">
-            <div class="top">
-              <p>Drag & drop image uploading</p>
-              <button type="button">Upload</button>
-            </div>
-            <div class="drag-area">
-              <span class="visible">
-                Drag & drop image here or
-                <span class="select" role="button">Browse</span>
-              </span>
-              <span class="on-drop">Drop images here</span>
-              <input name="file" type="file" class="file" multiple />
-            </div>
-
-            <!-- IMAGE PREVIEW CONTAINER -->
-            <div class="container"></div>
-          </div>
-        </div>
-
-        <!-- class="ring-2 text-slate-200 font-mono ring-green-500 rounded-xl px-4 py-1 text-lg outline-none" -->
-        <div class="w-full mt-7 mb-[2px] flex justify-center items-center bg-slate-400 text-slate-50 font-mono text-left
-          font-semibold align-middle ring-4 ring-green-400 rounded-md duration-300 hover:bg-green-500
-          hover:text-slate-900">
-          <input class="py-[1.5px] w-full duration-300 hover:tracking-widest" type="submit" value="Post Our Community">
-        </div>
-      </form>
-
+      </div>
     </div>
-  </div>
-  <script>
-    let files = [],
-      dragArea = document.querySelector('.drag-area'),
-      input = document.querySelector('.drag-area input'),
-      button = document.querySelector('.card button'),
-      select = document.querySelector('.drag-area .select'),
-      container = document.querySelector('.container');
 
-    /** CLICK LISTENER */
-    select.addEventListener('click', () => input.click());
+    <script>
+      const btn = document.querySelector("#MSR_Result__view__btn")
+      const sbtn = document.querySelector("#MR__show__btn")
+      document.querySelector(".sr__main__body").classList.remove("active")
 
-    /* INPUT CHANGE EVENT */
-    input.addEventListener('change', () => {
-      let file = input.files;
+      btn.addEventListener("click", function (event) {
+        let containr = event.target.parentElement.parentElement
+        containr.classList.remove("active")
+      })
+      sbtn.addEventListener("click", function (event) {
+        let containr = event.target.parentElement.parentElement.parentElement
+        containr.classList.add("active")
+      })
 
-      // if user select no image
-      if (file.length == 0) return;
+      const tbody = document.querySelectorAll("tbody")
+      tbody[2].style.height = tbody[1].clientHeight + "px"
 
-      for (let i = 0; i < file.length; i++) {
-        if (file[i].type.split("/")[0] != 'image') continue;
-        if (!files.some(e =>
-            e.name == file[i].name)) files.push(file[i])
-      }
+      const print__result = document.querySelector("#print__result")
 
-      showImages();
-    });
-
-    /** SHOW IMAGES */
-    function showImages() {
-      container.innerHTML = files.reduce((prev, curr, index) => {
-        return `${prev}
-      <div class="image">
-        <span onclick="delImage(${index})">&times;</span>
-        <img src="${URL.createObjectURL(curr)}" />
-      </div>`
-      }, '');
-    }
-
-    /* DELETE IMAGE */
-    function delImage(index) {
-      files.splice(index, 1);
-      showImages();
-    }
-
-    /* DRAG & DROP */
-    dragArea.addEventListener('dragover', e => {
-      e.preventDefault()
-      dragArea.classList.add('dragover')
-    })
-
-    /* DRAG LEAVE */
-    dragArea.addEventListener('dragleave', e => {
-      e.preventDefault()
-      dragArea.classList.remove('dragover')
-    });
-
-    /* DROP EVENT */
-    dragArea.addEventListener('drop', e => {
-      e.preventDefault()
-      dragArea.classList.remove('dragover');
-
-      let file = e.dataTransfer.files;
-      for (let i = 0; i < file.length; i++) {
-        /** Check selected file is image */
-        if (file[i].type.split("/")[0] !=
-          'image') continue;
-        if (!files.some(e => e.name == file[i].name)) files.push(file[i])
-      }
-      showImages();
-    });
-  </script>
-</body>
-
+      print__result.addEventListener("click", () => {
+        window.print()
+      })
+    </script>
+  </body>
 </html>

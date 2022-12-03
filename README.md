@@ -1,2 +1,0 @@
-# Result-view
-Result-view
